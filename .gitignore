@@ -1,0 +1,17 @@
+# Environment / secrets — NEVER commit these
+.env
+.env.*
+.env.local
+.env*.local
+
+# Trust state (contains wallet/identity state, may include private context)
+.trust-state.json
+
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+
+# Paperclip database backups
+/db.bak.*
