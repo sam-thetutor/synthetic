@@ -1,242 +1,184 @@
-# Agent Company Launcher on Celo
+# Synthetic
 
-Create and launch an onchain AI company in one click.
+**The operating system for onchain companies.**
 
-A user describes a business idea (for example, "social media agency"), and the platform generates the required agent team, deploys the company, verifies the main operator identity, registers trust identity, and executes delegated stablecoin transactions on Celo.
+Starting a company is broken. It takes weeks of paperwork, thousands in legal fees, and hiring people you can't yet afford. Most ideas die before they ever launch — not because they're bad, but because the barrier to starting is too high.
 
-## One-Line Pitch
+Synthetic changes that. Describe your business in one sentence, and we deploy a fully operational company in under a minute — staffed by autonomous AI agents, verified onchain, and ready to transact.
 
-Agent Company Launcher turns a plain-English company idea into a live autonomous team on Celo, with verifiable identity, delegated permissions, and real economic execution.
+No lawyers. No payroll. No waiting. Just launch.
 
-## Problem
+---
 
-People can spin up AI agents quickly, but they cannot easily:
+## The Problem
 
-1. Structure agents into a real operating company.
-2. Trust agents with money and permissions.
-3. Prove identity, accountability, and execution to users and judges.
+Starting a business today means:
 
-## Solution
+- **Hiring is expensive.** Even a small team costs $10K–$50K/month before you've earned a dollar.
+- **Setup takes weeks.** Legal registration, bank accounts, identity verification — all before you can do real work.
+- **You can't experiment.** There's no way to "try out" running a company without committing serious capital upfront.
+- **AI agents exist, but they can't operate as a business.** They have no identity, no spending limits, and no accountability. You can't trust them with money.
 
-This project provides a prompt-to-company workflow:
+The result: most founders never start, and those who do burn through runway before finding product-market fit.
 
-1. User describes the company they want.
-2. Platform generates a role-based agent blueprint.
-3. User deploys the company in one click.
-4. Main operator agent is trust-enabled with:
-   - Self identity verification
-   - ERC-8004 identity registration
-   - Delegated execution policy
-5. Main operator performs a real Celo stablecoin transaction.
+## The Solution
 
-## Why This Matters
+Synthetic lets anyone bootstrap and run a company in minutes.
 
-Autonomous companies are only viable when agents have:
+1. **Describe your idea** — "I want to start a social media agency" or "DeFi lending protocol"
+2. **We generate the team** — A full org chart of AI agents with defined roles, capabilities, and reporting structure
+3. **Deploy in one click** — Your company is live with a treasury, verified identity, and spending policies
+4. **Agents start working** — They can execute tasks, manage budgets, swap tokens, and transact with real money on Celo
 
-1. Verifiable identity
-2. Bounded authority
-3. Auditable onchain execution
+Think of it as a flight simulator for entrepreneurship. You get to experience running a company — with real onchain execution — before committing your life savings to it.
 
-This MVP proves all three in a single, simple flow.
+---
 
-## Core MVP Features
+## How It Works
 
-1. Prompt-to-blueprint company generation
-2. Auto-generated multi-agent team for the business type
-3. One-click company deployment
-4. Main agent Self verification status
-5. Main agent ERC-8004 identity registration proof
-6. Delegated spending policy for main agent
-7. One real Celo stablecoin transaction with tx hash
-8. Activity dashboard with identity and transaction evidence
-9. x402-enabled paid API access for every deployed agent
+### 1. Describe
 
-## Example User Flow
+Type a one-sentence business idea. Synthetic generates a role-based agent blueprint tailored to your industry — social media, DeFi, e-commerce, consulting, or any custom idea.
 
-Input:
+### 2. Deploy
 
-"I want to start a social media company"
+One click creates your company: agents are hired, a treasury wallet is generated, and the org structure is live. Every company includes a Main Operator (CEO) and a DeFi Operator for financial operations.
 
-Generated team:
+### 3. Trust
 
-1. Main Operator Agent
-2. Social Strategy Agent
-3. Content Creation Agent
-4. Design Agent
-5. Trend and Research Agent
+Before agents can touch money, they go through a trust pipeline:
 
-Then:
+- **Self Protocol verification** — The main operator proves its identity via Self Protocol, ensuring no anonymous actors
+- **ERC-8004 registration** — The agent gets an onchain identity anchor, creating a permanent, auditable record
+- **Delegation policies** — Spending is bounded: per-transaction limits, daily caps, and approved recipient lists
 
-1. User clicks Deploy Company
-2. Team is created
-3. Main agent identity and delegation are configured
-4. Main agent executes first operational payment on Celo
+### 4. Transact
 
-## High-Level Architecture
+Agents execute real operations on Celo:
 
-1. Frontend App
-   - Prompt input
-   - Company blueprint preview
-   - Deploy button
-   - Evidence dashboard
+- **cUSD payments** — Stablecoin transfers with full audit trail
+- **Token swaps** — Uniswap V3 integration for swapping between CELO, cUSD, USDC, and USDT
+- **Budget management** — Per-agent spend limits with real-time tracking
+- **x402 payments** — Agents pay for external API services using the x402 protocol
 
-2. Orchestration Layer
-   - Paperclip-based multi-agent orchestration
-   - Role assignment and inter-agent coordination
-   - Shared company task flow
+Every transaction is onchain, verifiable, and tied to a trusted identity.
 
-3. Trust and Permissions Layer
-   - Self identity for main operator agent
-   - ERC-8004 identity registration for main operator agent
-   - Delegated transaction policy
+---
 
-4. Payments Layer
-   - Celo stablecoin transfer execution
-   - x402 paid API calls via thirdweb
-   - Onchain tx hash capture and display
+## Key Features
 
-## Sponsor Mapping and Track Fit
+| Feature | Description |
+| --- | --- |
+| Prompt-to-Company | Describe a business, get a deployed agent team in seconds |
+| Multi-Agent Teams | Auto-generated org charts with CEO, DeFi operator, and domain specialists |
+| Self Protocol Identity | Main operator verified before any sensitive operations |
+| ERC-8004 Onchain ID | Permanent identity anchor on Celo for accountability |
+| Treasury & Budgets | Company wallet with per-agent spend limits and audit trail |
+| DeFi Operations | Token swaps via Uniswap V3 on Celo (CELO, cUSD, USDC, USDT) |
+| Delegation Policies | Bounded spending: max per tx, per day, per week, approved recipients |
+| Agent Command Center | Chat with agents, assign tasks, run autonomous workflows |
+| x402 Payments | Agents pay for external APIs using the x402 payment protocol |
+| Activity Feed | Full timeline of agent actions, tool calls, and transactions |
 
-### Primary Track: Celo (Best Agent on Celo)
+---
 
-Why this fits instantly:
+## Architecture
 
-1. Core product is agentic and deployed on Celo
-2. Real stablecoin transaction is executed onchain
-3. Strong real-world utility (business operations automation)
+```text
+User (Wallet + Prompt)
+        |
+   [Next.js Frontend]
+        |
+   [Paperclip Orchestration]
+     /     |      \
+  Agents  Tasks  Governance
+     |
+   [Trust Layer]
+   - Self Protocol (identity verification)
+   - ERC-8004 (onchain identity registration)
+   - Delegation (bounded spending policies)
+     |
+   [Payments Layer]
+   - Celo stablecoin transfers (cUSD)
+   - Uniswap V3 swaps (CELO/cUSD/USDC/USDT)
+   - x402 paid API calls
+   - Treasury with per-agent budgets
+```
 
-Evidence we will show:
+---
 
-1. Celo transaction hash
-2. Agent-driven payment action
-3. Live deployed company and team
+## Tech Stack
 
-### Cross-Track Fit: Protocol Labs style trust stack (ERC-8004)
+- **Frontend**: Next.js 16, React 19, Tailwind CSS 4
+- **Blockchain**: Celo Mainnet, Viem
+- **Agent Orchestration**: Paperclip
+- **Identity**: Self Protocol, ERC-8004
+- **DeFi**: Uniswap V3 (SwapRouter02, QuoterV2)
+- **Payments**: cUSD stablecoin, x402 protocol
+- **Wallet**: MetaMask (Celo network)
 
-Why this fits:
+---
 
-1. Main operator agent has onchain trust identity
-2. Agent execution is tied to identity and accountability
+## Hackathon Track Fit
 
-Evidence we will show:
+### Celo — Best Agent on Celo
 
-1. ERC-8004 identity registration record
-2. Identity-linked operator activity in dashboard
+- Agents execute real cUSD transactions on Celo mainnet
+- DeFi agent swaps tokens via Uniswap V3 on Celo
+- Full treasury management with onchain audit trail
 
-### Cross-Track Fit: Self Protocol
+### Self Protocol
 
-Why this fits:
+- Main operator identity verified via Self before any spending
+- Verification status gates all sensitive operations
+- QR-based verification flow integrated in the UI
 
-1. Main operator is verified before sensitive actions
-2. Verification status gates spending permissions
+### ERC-8004 Onchain Identity
 
-Evidence we will show:
+- Every company's main operator gets a registered onchain identity
+- Identity is tied to all agent actions and transactions
+- Permanent accountability record on Celo
 
-1. Verified status in UI
-2. Spending action blocked until verified
+### Open Track
 
-### Cross-Track Fit: MetaMask Delegations
+- End-to-end product: from idea to running company in under a minute
+- Real economic execution, not a mock demo
+- Solves a real problem: making entrepreneurship accessible to everyone
 
-Why this fits:
+---
 
-1. Agent executes with bounded delegated authority
-2. Policy includes constraints such as token and spend limit
+## Getting Started
 
-Evidence we will show:
+```bash
+# Clone the repo
+git clone <repo-url>
+cd synthetic/app
 
-1. Delegation policy details in UI
-2. Delegated transaction execution proof
+# Install dependencies
+pnpm install
 
-### Open Track Fit
+# Set up environment variables
+cp .env.example .env.local
+# Fill in: CELO_RPC_URL, OPERATOR_PRIVATE_KEY, CUSD_CONTRACT_ADDRESS,
+#          PAPERCLIP_API_KEY, SELF_APP_ID, OPENAI_API_KEY
 
-Why this fits:
+# Run the dev server
+pnpm dev
+```
 
-1. End-to-end autonomous company creation product
-2. Strong technical and product narrative
-3. Real execution, not mock-only flow
+Open [http://localhost:3000](http://localhost:3000), connect your MetaMask wallet (Celo network), and deploy your first company.
 
-## Judge-Friendly Proof Checklist
+---
 
-1. Prompt entered and company blueprint generated
-2. Agent company deployed in one click
-3. Main agent Self-verified
-4. Main agent ERC-8004 registered
-5. Delegation policy created
-6. Delegated Celo stablecoin payment executed
-7. Transaction hash visible
-8. Activity log ties action to trusted main operator
+## Demo
 
-## Final 2-Minute Demo Narration (Word-for-Word)
+> Video: _coming soon_
 
-"Today I will show Agent Company Launcher on Celo.
-
-Right now, creating AI agents is easy, but creating a trustworthy AI company is still hard. Most systems do not give agents identity, bounded permissions, or auditable execution.
-
-Our product solves that in one flow.
-
-I start by describing the business I want: social media company.
-
-The platform generates a full agent team for this company: a main operator, social strategy, content, design, and research.
-
-Now I click Deploy Company.
-
-In one step, the company and agents are created and can coordinate work.
-
-Next, we trust-enable the main operator.
-
-First, Self verification is required. You can see the verified status is active.
-
-Second, we register ERC-8004 identity for the main operator, so this agent has an onchain trust anchor.
-
-Third, we apply delegated permissions so the main operator can execute payments safely within a strict policy.
-
-Now I trigger an operational payment. This action is executed by the main operator through delegation on Celo in stablecoins.
-
-Here is the transaction hash and activity log.
-
-So in less than two minutes, we went from plain-English company idea to a deployed, trust-enabled, transacting AI company on Celo.
-
-That is Agent Company Launcher: prompt to company, identity to trust, delegation to safety, and onchain execution to proof."
-
-## What Is Real in This MVP
-
-1. Prompt to agent-company blueprint
-2. One-click team deployment
-3. Main operator identity verification
-4. Main operator ERC-8004 registration
-5. Delegated onchain payment on Celo
-6. x402-enabled external API payments for deployed agents
-7. Tx and activity proof in dashboard
-
-## 24-Hour Scope Discipline
-
-Done now:
-
-1. Single business flow
-2. Single trust-enabled main operator
-3. Single delegated payment path
-4. Single dashboard for proof
-
-Deferred:
-
-1. Full marketplace of templates
-2. Multi-company management
-3. Complex treasury automation
-4. Multi-chain expansion
-
-## Submission Assets
-
-1. Repository URL: TODO
-2. Demo video URL: TODO
-3. Live app URL: TODO
-4. Transaction hash(es): TODO
-5. ERC-8004 identity proof link: TODO
-6. Self verification proof screenshot/link: TODO
+---
 
 ## Team
 
-1. Builder: TODO
-2. Contact: TODO
+Built at the Celo hackathon.
 
 ## License
 
